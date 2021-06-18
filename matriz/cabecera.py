@@ -3,6 +3,7 @@ from matriz.nodoMatriz import *
 class listaEncabezado():
     def __init__(self, head = None):
         self.head = head
+
         
     def agregarEncabezado(self, nuevoNodo):
         if self.head == None:

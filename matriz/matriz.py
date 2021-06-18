@@ -9,6 +9,9 @@ class Matriz:
     def __init__(self):
         self.efilas = listaEncabezado()
         self.ecolumnas = listaEncabezado()
+        self.tamX = 0
+        self.tamY = 0
+
     
     def insertar(self, posX, posY, valor):
         nuevo = Nodo(posX, posY, valor)
@@ -107,10 +110,58 @@ se dibujan las punteros de ambas cabeceras al primer elemento
 se dibujan los punteros del resto de elementos en las filas
 se alinean los nodos
 se recorren el resto de las filas
-"""
+
+#Imprime la lita enlazada
+    def imagen_dot(ListaDoble):
+        f = Digraph(format = "png", name = "salida")
+        f.attr(size = "8,5")
+
+        aux=ListaDoble.primero
+        cont = 0
+        while aux:
+            f.node(str(cont), " Nombre: " + aux.nombre + "\nApellido: " + aux.apellido + "\nTeléfono: " + aux.telefono)
+            cont += 1
+            aux=aux.siguiente
+        
+        f.node('-1', 'Agenda')
+        f.node(str(cont), 'Fin Agenda')
+        cont = 0
+        aux=ListaDoble.primero
+        while aux:    
+            f.edge(str(cont), str(cont - 1 ))
+            f.edge(str(cont), str(cont + 1 ))
+            cont += 1
+            aux = aux.siguiente
+
+        f.render()
+        os.system('salida.gv.png')
+
+        #edge[dir="both"]
+        """
 
 def imagen_dor(matriz):
     f = Digraph(format = "png", name = "salida")
     f.attr(size = "8.5")
 
+    aux = matriz.efila.head
     
+
+
+    def agregarPieza1():
+        print("L")
+        print("Trabajar con las coordenas")
+        
+        pass
+    
+    def agregarPieza():
+        pass
+    
+    def agregarPieza():
+        pass
+    
+    def agregarPieza():
+        pass
+    
+    def agregarPieza():
+        pass
+
